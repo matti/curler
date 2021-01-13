@@ -5,7 +5,6 @@ import (
 	"context"
 	"fmt"
 	"io/ioutil"
-	"math"
 	"os"
 	"os/exec"
 	"strconv"
@@ -21,16 +20,6 @@ import (
 	"github.com/mum4k/termdash/widgets/linechart"
 	"github.com/phayes/permbits"
 )
-
-func sineInputs() []float64 {
-	var res []float64
-
-	for i := 0; i < 200; i++ {
-		v := math.Sin(float64(i) / 100 * math.Pi)
-		res = append(res, v)
-	}
-	return res
-}
 
 func playLineChart(ctx context.Context, lc *linechart.LineChart, delay time.Duration, values chan float64) {
 
